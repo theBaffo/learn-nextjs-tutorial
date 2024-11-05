@@ -15,6 +15,10 @@ async function seedUsers() {
     );
   `;
 
+  await client.sql`
+    DELETE FROM users;
+  `;
+
   const insertedUsers = await Promise.all(
     users.map(async (user) => {
       const hashedPassword = await bcrypt.hash(user.password, 10);
@@ -42,6 +46,10 @@ async function seedInvoices() {
     );
   `;
 
+  await client.sql`
+    DELETE FROM invoices;
+  `;
+
   const insertedInvoices = await Promise.all(
     invoices.map(
       (invoice) => client.sql`
@@ -67,6 +75,10 @@ async function seedCustomers() {
     );
   `;
 
+  await client.sql`
+    DELETE FROM customers;
+  `;
+
   const insertedCustomers = await Promise.all(
     customers.map(
       (customer) => client.sql`
@@ -86,6 +98,10 @@ async function seedRevenue() {
       month VARCHAR(4) NOT NULL UNIQUE,
       revenue INT NOT NULL
     );
+  `;
+
+  await client.sql`
+    DELETE FROM revenue;
   `;
 
   const insertedRevenue = await Promise.all(
