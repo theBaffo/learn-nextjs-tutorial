@@ -4,7 +4,8 @@
     "build": "next build",
     "dev": "next dev --turbo",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "pnpm exec prettier . --write"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.4",
@@ -29,7 +30,9 @@
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "eslint": "^8",
-    "eslint-config-next": "15.0.2"
+    "eslint-config-next": "15.0.2",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "3.3.3"
   },
   "pnpm": {
     "overrides": {
